@@ -1,0 +1,43 @@
+getgenv().Prada = {
+    silent_aim = {
+        enabled = true,
+        sync = false,  -- // If sync is enabled, triggerbot uses the silent aim box, requiring only one box configuration
+        box = {
+            multiplier = 0.5,
+            plus_y = 1,
+            minus_y = 0.5
+        },
+        nearest_point = {
+            enabled = true
+        }
+    },
+    triggerbot = {
+        enabled = true,
+        key = Enum.KeyCode.V,
+        box = {
+            multiplier = 0.5,
+            plus_y = 1,
+            minus_y = 0.5
+        },
+        whitelisted = {
+            ["[Double-Barrel SG]"] = true,
+            ["[Revolver]"] = true,
+            ["[TacticalShotgun]"] = true
+        }
+    },
+    spread_modifier = {
+        enabled = true,
+        guns = {
+            ["[Double-Barrel SG]"] = 0.8,
+            ["[Shotgun]"] = 0.1,
+            ["[TacticalShotgun]"] = 0.65
+        }
+    },
+    checks = {
+        visible_check = true,
+        knock_check = false
+    },
+    visualize_box = true
+};
+
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/eba5a7b3a17bca06a5c2ba95847c4126.lua"))()
