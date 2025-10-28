@@ -20,6 +20,8 @@ getgenv().Prada = {
             plus_y = 1,
             minus_y = 0.5
         },
+        type = "hold",
+        delay = 0,
         whitelisted = {
             ["[Double-Barrel SG]"] = true,
             ["[Revolver]"] = true,
@@ -29,25 +31,31 @@ getgenv().Prada = {
     bullet_modification = {
         enabled = true,
         size = {
-            X = 2,
-            Y = 3,
-            Z = 2,
+            X = 5,
+            Y = 5,
+            Z = 5,
         },
     },
     spread_modifier = {
         enabled = true,
         guns = {
-            ["[Double-Barrel SG]"] = 0.8,
+            ["[Double-Barrel SG]"] = 0.7,
             ["[Shotgun]"] = 0.1,
-            ["[TacticalShotgun]"] = 0.8
+            ["[TacticalShotgun]"] = 0.7
         }
+    },
+    skin_changer = {
+        enabled = true,
+        guns = { -- // Gal set / Elec Set / Luck set / (Knife: Kukri )
+            ["[Double-Barrel SG]"] = "Galaxy",
+            ["[Revolver]"] = "Galaxy",
+            ["[TacticalShotgun]"] = "Galaxy",
+            ["[Knife]"] = ""
+        },
     },
     checks = {
         visible_check = true,
         knock_check = true
-    },
-    extra = {
-        skin_changer = true
     },
     visualize_box = false
 };
