@@ -45,11 +45,11 @@ getgenv().Prada = {
     },
     skin_changer = {
         enabled = false,
-        guns = { -- // Gal set / Elec Set / Luck set / (Knife: Kukri )
+        guns = { -- // If you don't want a certain skin for any weapon put inside the brackets "Default"
             ["[Double-Barrel SG]"] = "Galaxy",
             ["[Revolver]"] = "Galaxy",
             ["[TacticalShotgun]"] = "Galaxy",
-            ["[Knife]"] = ""
+            ["[Knife]"] = "Love Kukri"
         },
     },
     checks = {
