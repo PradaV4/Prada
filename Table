@@ -1,5 +1,4 @@
 getgenv().Prada = {
-	key = "",
     silent_aim = {
         enabled = true,
         sync = true,  -- // If sync is enabled, triggerbot uses the silent aim box, requiring only one box configuration
@@ -31,9 +30,9 @@ getgenv().Prada = {
     bullet_modification = {
         enabled = true,
         size = {
-            X = 5,
-            Y = 5,
-            Z = 5,
+            X = 0.5,
+            Y = 1,
+            Z = 0.5,
         },
     },
     spread_modifier = {
@@ -45,7 +44,7 @@ getgenv().Prada = {
         }
     },
     skin_changer = {
-        enabled = true,
+        enabled = false,
         guns = { -- // Gal set / Elec Set / Luck set / (Knife: Kukri )
             ["[Double-Barrel SG]"] = "Galaxy",
             ["[Revolver]"] = "Galaxy",
