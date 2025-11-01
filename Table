@@ -1,3 +1,5 @@
+script_key="Replace this inside of here with ur key";
+
 getgenv().Prada = {
     silent_aim = {
         enabled = true,
@@ -27,6 +29,12 @@ getgenv().Prada = {
             ["[TacticalShotgun]"] = true
         }
     },
+    client_redirection = { -- will make your bullets go to your mouse so it wont curve
+        enabled = true,
+        whitelisted = { -- only works with single bullet weapons
+            ["[Revolver]"] = true,
+        }
+    },
     bullet_modification = {
         enabled = true,
         size = {
@@ -34,6 +42,23 @@ getgenv().Prada = {
             Y = 1,
             Z = 0.5,
         },
+        force_hit = {
+            enabled = true,
+            part = "Head",
+            whitelisted = {
+                ["[Double-Barrel SG]"] = true,
+                ["[Revolver]"] = true,
+                ["[TacticalShotgun]"] = true
+            }
+        }
+    },
+    delay_modifier = {
+        enabled = true,
+        guns = {
+            ["[Double-Barrel SG]"] = 0.25,
+            ["[Revolver]"] = 0.1,
+            ["[TacticalShotgun]"] = 0.5
+        }
     },
     spread_modifier = {
         enabled = true,
@@ -44,8 +69,8 @@ getgenv().Prada = {
         }
     },
     skin_changer = {
-        enabled = false,
-        guns = { -- // If you don't want a certain skin for any weapon put inside the brackets "Default"
+        enabled = true,
+        guns = { -- // If you don't want a certain skin for any weapon put inside the brackets ""
             ["[Double-Barrel SG]"] = "Galaxy",
             ["[Revolver]"] = "Galaxy",
             ["[TacticalShotgun]"] = "Galaxy",
@@ -56,8 +81,14 @@ getgenv().Prada = {
         visible_check = true,
         knock_check = true
     },
+    whitelisting = {
+        crew_check = true,
+        custom = {
+            "Player1",
+            "Player2"
+        }
+    },
     visualize_box = false
 };
-
 
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/eba5a7b3a17bca06a5c2ba95847c4126.lua"))()
