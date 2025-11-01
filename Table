@@ -1,4 +1,4 @@
-script_key="Replace this inside of here with ur key";
+script_key = "Enter your key here";
 
 getgenv().Prada = {
     silent_aim = {
