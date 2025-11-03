@@ -1,8 +1,4 @@
 getgenv().Prada = {
-    method = {
-        Method = "Automatic", -- // Options: "Target" or "Automatic"
-        Keybind = Enum.KeyCode.C,
-    },
     silent_aim = {
         enabled = true,
         sync = true,  -- // If sync is enabled, triggerbot uses the silent aim box, requiring only one box configuration
@@ -14,20 +10,6 @@ getgenv().Prada = {
         nearest_point = {
             enabled = true
         }
-    },
-    camlock = {
-        enabled = true,
-        key = Enum.KeyCode.V,
-        type = "hold", -- // Options: "hold" or "toggle"
-        box = {
-            multiplier = 0.6,
-            plus_y = 1,
-            minus_y = 0.5
-        },
-        nearest_point = {
-            enabled = true,
-        },
-        snappiness = 0.001,
     },
     triggerbot = {
         enabled = true,
