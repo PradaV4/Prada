@@ -123,4 +123,4 @@ getgenv().Prada = {
     visualize_box = false
 };
 -- //
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/9d4db6d0887bf311ec05dd7f8283831e.lua"))()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/7cb6af37b3ff41cf726a3acfdefc4102.lua"))()
