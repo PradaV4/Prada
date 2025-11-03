@@ -1,17 +1,35 @@
-script_key = "Enter your key here";
+script_key = "";
 
 getgenv().Prada = {
+    method = {
+        Method = "Automatic", -- // Options: "Target" or "Automatic"
+        Keybind = Enum.KeyCode.C,
+    },
     silent_aim = {
         enabled = true,
         sync = true,  -- // If sync is enabled, triggerbot uses the silent aim box, requiring only one box configuration
         box = {
-            multiplier = 0.8,
+            multiplier = 0.6,
             plus_y = 1,
             minus_y = 0.5
         },
         nearest_point = {
             enabled = true
         }
+    },
+    camlock = {
+        enabled = true,
+        key = Enum.KeyCode.V,
+        type = "hold", -- // Options: "hold" or "toggle"
+        box = {
+            multiplier = 0.6,
+            plus_y = 1,
+            minus_y = 0.5
+        },
+        nearest_point = {
+            enabled = true,
+        },
+        snappiness = 0.1,
     },
     triggerbot = {
         enabled = true,
@@ -21,7 +39,7 @@ getgenv().Prada = {
             plus_y = 1,
             minus_y = 0.5
         },
-        type = "hold",
+        type = "hold", -- // Options: "hold" or "toggle"
         delay = 0,
         whitelisted = {
             ["[Double-Barrel SG]"] = true,
@@ -54,40 +72,55 @@ getgenv().Prada = {
     delay_modifier = {
         enabled = true,
         guns = {
-            ["[Double-Barrel SG]"] = 0.25,
-            ["[Revolver]"] = 0.1,
-            ["[TacticalShotgun]"] = 0.5
+            ["[Double-Barrel SG]"] = 0.325,
+            ["[Revolver]"] = 0.1875,
+            ["[TacticalShotgun]"] = 0.63
         }
     },
     spread_modifier = {
         enabled = true,
         guns = {
-            ["[Double-Barrel SG]"] = 0.7,
+            ["[Double-Barrel SG]"] = 0.8,
             ["[Shotgun]"] = 0.1,
-            ["[TacticalShotgun]"] = 0.7
+            ["[TacticalShotgun]"] = 0.8
         }
     },
     skin_changer = {
         enabled = true,
         guns = { -- // If you don't want a certain skin for any weapon put inside the brackets ""
-            ["[Double-Barrel SG]"] = "Galaxy",
+            ["[Double-Barrel SG]"] = "Electric",
             ["[Revolver]"] = "Galaxy",
-            ["[TacticalShotgun]"] = "Galaxy",
-            ["[Knife]"] = "Love Kukri"
+            ["[TacticalShotgun]"] = "Patriot",
+            ["[Knife]"] = "Emerald"
         },
     },
-    checks = {
-        visible_check = true,
-        knock_check = true
-    },
     whitelisting = {
-        crew_check = true,
+        crew_check = false,
         custom = {
             "Player1",
             "Player2"
         }
     },
-    visualize_box = false
+    movement_modification = {
+        enabled = true,
+        speed = {
+            mutiplier = 5,
+        },
+        key = Enum.KeyCode.O,
+    },
+    esp = {
+        enabled = true,
+        name = {
+            size = 11,  
+            color = Color3.fromRGB(255, 0, 0), -- // Color picker at : https://www.w3schools.com/colors/colors_picker.asp
+        },
+        key = Enum.KeyCode.V,
+    },
+    checks = {
+        visible_check = true,
+        knock_check = true
+    },
+    visualize_box = true
 };
-
+-- //
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/eba5a7b3a17bca06a5c2ba95847c4126.lua"))()
