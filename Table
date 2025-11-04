@@ -1,5 +1,5 @@
 script_key = "Ur key goes here"
-
+-- // discord.gg/pradacc
 getgenv().Prada = {
     method = {
         Method = "Automatic", -- Options: "Target" or "Automatic"
