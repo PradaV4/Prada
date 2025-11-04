@@ -1,9 +1,9 @@
 -- // discord.gg/pradacc
 
 getgenv().prada = {
-    ["Key"] = "asdldas",
+    ["Key"] = "",
     ["Target"] = {
-        ["Type"] = "Target", -- Target, Automatic
+        ["Type"] = "Automatic", -- Target, Automatic
         ["Key"] = Enum.KeyCode.C,
         ["Unlock"] = {
             ["Knocked"] = true,
@@ -15,7 +15,7 @@ getgenv().prada = {
             ["Enabled"] = true,
             ["Nearest Point"] = {
                 ["Enabled"] = true,
-                ["Scale"] = 2.5
+                ["Scale"] = 4.5
             },
             ["Whitelisted"] = {
                 ["[Double-Barrel SG]"] = true,
@@ -25,8 +25,9 @@ getgenv().prada = {
         },
         ["Camlock"] = {
             ["Enabled"] = true,
-            ["Smoothness"] = 0.04,
+            ["Smoothness"] = 0.065,
             ["Key"] = Enum.KeyCode.V,
+            ["Type"] = "Hold", -- Hold, Toggle
             ["Whitelisted"] = {
                 ["[Double-Barrel SG]"] = true,
                 ["[Revolver]"] = true,
@@ -36,7 +37,8 @@ getgenv().prada = {
         ["Triggerbot"] = {
             ["Enabled"] = true,
             ["Key"] = Enum.KeyCode.V,
-            ["Delay"] = 0,
+            ["Delay"] = 0.08,
+            ["Type"] = "Toggle", -- Hold, Toggle
             ["Whitelisted"] = {
                 ["[Double-Barrel SG]"] = true,
                 ["[Revolver]"] = true,
@@ -53,18 +55,18 @@ getgenv().prada = {
         ["Box"] = {
             ["Silent"] = {
                 ["Visualize"] = false,
-                ["Width"] = 0.8, -- multiplier
-                ["Height"] = 1 
+                ["Width"] = 0.7, -- multiplier
+                ["Height"] = 1
             },
             ["Camlock"] = {
                 ["Visualize"] = false,
-                ["Width"] = 0.8, -- multiplier
-                ["Height"] = 1 
+                ["Width"] = 0.7, -- multiplier
+                ["Height"] = 1
             },
             ["Triggerbot"] = {
                 ["Visualize"] = false,
-                ["Width"] = 0.8, -- multiplier
-                ["Height"] = 1 
+                ["Width"] = 0.5, -- multiplier
+                ["Height"] = 1
             }
         },
         ["ESP"] = {
@@ -84,7 +86,7 @@ getgenv().prada = {
                 ["Guns"] = {
                     ["[Double-Barrel SG]"] = 85,
                     ["[Revolver]"] = 85,
-                    ["[TacticalShotgun]"] = 85
+                    ["[TacticalShotgun]"] = 97
                 }
             },
             ["Spread"] = {
@@ -97,7 +99,7 @@ getgenv().prada = {
             ["Bullet Modification"] = {
                 ["Enabled"] = true,
                 ["Width"] = 1,
-                ["Height"] = 1,
+                ["Height"] = 2,
                 ["Force Hit"] = {
                     ["Enabled"] = false
                 }
@@ -112,8 +114,8 @@ getgenv().prada = {
         ["SkinChanger"] = {
             ["Enabled"] = true,
             ["Guns"] = {
-                ["[Double-Barrel SG]"] = "Electric",
-                ["[Revolver]"] = "DH-Verified",
+                ["[Double-Barrel SG]"] = "Galaxy",
+                ["[Revolver]"] = "Galaxy",
                 ["[TacticalShotgun]"] = "Electric",
                 ["[Knife]"] = "Love Kukri"
             }
