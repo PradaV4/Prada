@@ -129,4 +129,4 @@ getgenv().prada = {
 }
 
 -- //
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/49764825f074d3a3f543b14c6a79aa8c.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/PradaV4/Prada/refs/heads/main/loader",true))()
