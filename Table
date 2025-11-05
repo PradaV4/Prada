@@ -1,134 +1,143 @@
--- // discord.gg/pradacc
+script_key = "Ur key goes here"
 
-getgenv().prada = {
-    ["Key"] = "",
-    ["Target"] = {
-        ["Type"] = "Automatic", -- Target, Automatic
-        ["Key"] = Enum.KeyCode.C,
-        ["Unlock"] = {
-            ["Knocked"] = true,
-            ["Grabbed"] = true
+getgenv().Prada = {
+    method = {
+        Method = "Target", -- Options: "Target" or "Automatic"
+        Keybind = Enum.KeyCode.C
+    },
+
+    silent_aim = {
+        enabled = true,
+        sync = true, -- Uses silent aim box for triggerbot / camlock
+        box = {
+            multiplier = 25,
+            plus_y = 25,
+            minus_y = 25
+        },
+        nearest_point = {
+            enabled = true
         }
     },
-    ["Combat"] = {
-        ["Silent"] = {
-            ["Enabled"] = true,
-            ["Nearest Point"] = {
-                ["Enabled"] = true,
-                ["Scale"] = 4.5
-            },
-            ["Whitelisted"] = {
+
+    camlock = {
+        enabled = true,
+        part = "Head",
+        nearestpoint = false,
+        key = Enum.KeyCode.V,
+        type = "hold",
+        box = {
+            multiplier = 1.5,
+            plus_y = 1,
+            minus_y = 0.5
+        },
+        camlock_settings = {
+            Third_Person = false,
+            First_Person = true,
+        },
+        snappiness = 0.022
+    },
+
+    triggerbot = {
+        enabled = true,
+        key = Enum.KeyCode.V,
+        box = {
+            multiplier = 0.8,
+            plus_y = 1,
+            minus_y = 0.5
+        },
+        type = "hold",
+        delay = 0,
+        whitelisted = {
+            ["[Double-Barrel SG]"] = true,
+            ["[Revolver]"] = true,
+            ["[TacticalShotgun]"] = true
+        }
+    },
+
+    client_redirection = {
+        enabled = true,
+        whitelisted = { -- Only works with single bullet weapons
+            ["[Revolver]"] = true
+        }
+    },
+
+    bullet_modification = {
+        enabled = true,
+        size = {
+            X = 0.5,
+            Y = 1,
+            Z = 0.5
+        },
+        force_hit = {
+            enabled = true,
+            whitelisted = {
                 ["[Double-Barrel SG]"] = true,
                 ["[Revolver]"] = true,
                 ["[TacticalShotgun]"] = true
             }
-        },
-        ["Camlock"] = {
-            ["Enabled"] = true,
-            ["Smoothness"] = 0.065,
-            ["Key"] = Enum.KeyCode.V,
-            ["Type"] = "Hold", -- Hold, Toggle
-            ["Whitelisted"] = {
-                ["[Double-Barrel SG]"] = true,
-                ["[Revolver]"] = true,
-                ["[TacticalShotgun]"] = true
-            }
-        },
-        ["Triggerbot"] = {
-            ["Enabled"] = true,
-            ["Key"] = Enum.KeyCode.V,
-            ["Delay"] = 0.08,
-            ["Type"] = "Toggle", -- Hold, Toggle
-            ["Whitelisted"] = {
-                ["[Double-Barrel SG]"] = true,
-                ["[Revolver]"] = true,
-                ["[TacticalShotgun]"] = true
-            }
-        },
-        ["Checks"] = {
-            ["Knocked"] = true,
-            ["ForceField"] = true,
-            ["Grabbed"] = true
         }
     },
-    ["Visuals"] = {
-        ["Box"] = {
-            ["Silent"] = {
-                ["Visualize"] = false,
-                ["Width"] = 0.7, -- multiplier
-                ["Height"] = 1
-            },
-            ["Camlock"] = {
-                ["Visualize"] = false,
-                ["Width"] = 0.7, -- multiplier
-                ["Height"] = 1
-            },
-            ["Triggerbot"] = {
-                ["Visualize"] = false,
-                ["Width"] = 0.5, -- multiplier
-                ["Height"] = 1
-            }
-        },
-        ["ESP"] = {
-            ["Enabled"] = false,
-            ["Key"] = Enum.KeyCode.Z,
-            ["Name"] = {
-                ["Enabled"] = false,
-                ["Size"] = 13,
-                ["Color"] = Color3.fromRGB(255, 0, 0)
-            }
+
+    delay_modifier = {
+        enabled = true,
+        guns = {
+            ["[Double-Barrel SG]"] = 0.32,
+            ["[Revolver]"] = 0.1,
+            ["[TacticalShotgun]"] = 0.63
         }
     },
-    ["Tool"] = {
-        ["Mods"] = {
-            ["Delay"] = {
-                ["Enabled"] = true,
-                ["Guns"] = {
-                    ["[Double-Barrel SG]"] = 85,
-                    ["[Revolver]"] = 85,
-                    ["[TacticalShotgun]"] = 97
-                }
-            },
-            ["Spread"] = {
-                ["Enabled"] = true,
-                ["Guns"] = {
-                    ["[Double-Barrel SG]"] = 80,
-                    ["[TacticalShotgun]"] = 80
-                }
-            },
-            ["Bullet Modification"] = {
-                ["Enabled"] = true,
-                ["Width"] = 1,
-                ["Height"] = 2,
-                ["Force Hit"] = {
-                    ["Enabled"] = false
-                }
-            },
-            ["Client Redirection"] = {
-                ["Enabled"] = true,
-                ["Whitelisted"] = {
-                    ["[Revolver]"] = true
-                }
-            }
-        },
-        ["SkinChanger"] = {
-            ["Enabled"] = true,
-            ["Guns"] = {
-                ["[Double-Barrel SG]"] = "Galaxy",
-                ["[Revolver]"] = "Galaxy",
-                ["[TacticalShotgun]"] = "Electric",
-                ["[Knife]"] = "Love Kukri"
-            }
+
+    spread_modifier = {
+        enabled = true,
+        guns = {
+            ["[Double-Barrel SG]"] = 0,
+            ["[Shotgun]"] = 0.1,
+            ["[TacticalShotgun]"] = 0
         }
     },
-    ["Character"] = {
-        ["Speed"] = {
-            ["Enabled"] = false,
-            ["Key"] = Enum.KeyCode.T,
-            ["Multiplier"] = 3
+
+    skin_changer = {
+        enabled = true,
+        guns = { -- Use "" for no skin on specific weapons
+            ["[Double-Barrel SG]"] = "Golden Age",
+            ["[Revolver]"] = "DH-Verified",
+            ["[TacticalShotgun]"] = "Electric",
+            ["[Knife]"] = "Love Kukri"
         }
-    }
+    },
+
+    whitelisting = {
+        crew_check = false,
+        custom = {
+            "Player1",
+            "Player2"
+        }
+    },
+
+    movement_modification = {
+        enabled = false,
+        speed = {
+            multiplier = 5
+        },
+        key = Enum.KeyCode.O
+    },
+
+    esp = {
+        enabled = true,
+        name = {
+            size = 14,
+            color = Color3.fromRGB(255, 0, 0)
+        },
+        key = Enum.KeyCode.T
+    },
+
+    checks = {
+        visible_check = true,
+        knock_check = true
+    },
+
+    -- // Displays the field-of-view box for silent aim, camlock, and triggerbot.
+    visualize_box = false
 }
 
--- //
-loadstring(game:HttpGet("https://raw.githubusercontent.com/PradaV4/Prada/refs/heads/main/loader",true))()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/ff31c87b31c0689dac17edcb25e28b43.lua"))()
