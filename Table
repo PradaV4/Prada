@@ -1,53 +1,47 @@
 -- // discord.gg/pradacc
 
-script_key = "Ur key goes here"
+script_key = "";
 
 getgenv().Prada = {
     method = {
-        Method = "Target", -- Options: "Target" or "Automatic"
-        Keybind = Enum.KeyCode.C
+        Method = "Automatic", -- // Options: "Target" or "Automatic"
+        Keybind = Enum.KeyCode.C,
     },
-
     silent_aim = {
         enabled = true,
-        sync = true, -- Uses silent aim box for triggerbot / camlock
+        sync = true,  -- // If sync is enabled, triggerbot uses the silent aim box, requiring only one box configuration
         box = {
-            multiplier = 25,
-            plus_y = 25,
-            minus_y = 25
+            multiplier = 0.6,
+            plus_y = 1,
+            minus_y = 0.5
         },
         nearest_point = {
             enabled = true
         }
     },
-
     camlock = {
         enabled = true,
-        part = "Head",
-        nearestpoint = false,
         key = Enum.KeyCode.V,
-        type = "hold",
+        type = "hold", -- // Options: "hold" or "toggle"
         box = {
-            multiplier = 1.5,
+            multiplier = 0.6,
             plus_y = 1,
             minus_y = 0.5
         },
-        camlock_settings = {
-            Third_Person = false,
-            First_Person = true,
+        nearest_point = {
+            enabled = true,
         },
-        snappiness = 0.022
+        snappiness = 0.1,
     },
-
     triggerbot = {
         enabled = true,
         key = Enum.KeyCode.V,
         box = {
-            multiplier = 0.8,
+            multiplier = 0.5,
             plus_y = 1,
             minus_y = 0.5
         },
-        type = "hold",
+        type = "hold", -- // Options: "hold" or "toggle"
         delay = 0,
         whitelisted = {
             ["[Double-Barrel SG]"] = true,
@@ -55,20 +49,18 @@ getgenv().Prada = {
             ["[TacticalShotgun]"] = true
         }
     },
-
-    client_redirection = {
+    client_redirection = { -- will make your bullets go to your mouse so it wont curve
         enabled = true,
-        whitelisted = { -- Only works with single bullet weapons
-            ["[Revolver]"] = true
+        whitelisted = { -- only works with single bullet weapons
+            ["[Revolver]"] = true,
         }
     },
-
     bullet_modification = {
         enabled = true,
         size = {
             X = 0.5,
             Y = 1,
-            Z = 0.5
+            Z = 0.5,
         },
         force_hit = {
             enabled = true,
@@ -79,67 +71,43 @@ getgenv().Prada = {
             }
         }
     },
-
     delay_modifier = {
         enabled = true,
         guns = {
-            ["[Double-Barrel SG]"] = 0.32,
-            ["[Revolver]"] = 0.1,
+            ["[Double-Barrel SG]"] = 0.325,
+            ["[Revolver]"] = 0.1875,
             ["[TacticalShotgun]"] = 0.63
         }
     },
-
     spread_modifier = {
         enabled = true,
         guns = {
-            ["[Double-Barrel SG]"] = 0,
+            ["[Double-Barrel SG]"] = 0.8,
             ["[Shotgun]"] = 0.1,
-            ["[TacticalShotgun]"] = 0
+            ["[TacticalShotgun]"] = 0.8
         }
     },
-
     skin_changer = {
         enabled = true,
-        guns = { -- Use "" for no skin on specific weapons
-            ["[Double-Barrel SG]"] = "Golden Age",
-            ["[Revolver]"] = "DH-Verified",
-            ["[TacticalShotgun]"] = "Electric",
-            ["[Knife]"] = "Love Kukri"
-        }
+        guns = { -- // If you don't want a certain skin for any weapon put inside the brackets ""
+            ["[Double-Barrel SG]"] = "Electric",
+            ["[Revolver]"] = "Galaxy",
+            ["[TacticalShotgun]"] = "Patriot",
+            ["[Knife]"] = "Emerald"
+        },
     },
-
-    whitelisting = {
-        crew_check = false,
-        custom = {
-            "Player1",
-            "Player2"
-        }
-    },
-
     movement_modification = {
         enabled = false,
         speed = {
-            multiplier = 5
+            mutiplier = 5,
         },
-        key = Enum.KeyCode.O
+        key = Enum.KeyCode.O,
     },
-
-    esp = {
-        enabled = true,
-        name = {
-            size = 14,
-            color = Color3.fromRGB(255, 0, 0)
-        },
-        key = Enum.KeyCode.T
-    },
-
     checks = {
         visible_check = true,
         knock_check = true
     },
-
-    -- // Displays the field-of-view box for silent aim, camlock, and triggerbot.
     visualize_box = false
-}
+};
 
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/133268fce8196334893fd78fbe1adb54.lua"))()
