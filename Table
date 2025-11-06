@@ -1,3 +1,5 @@
+-- // discord.gg/pradacc
+
 script_key = "Ur key goes here"
 
 getgenv().Prada = {
