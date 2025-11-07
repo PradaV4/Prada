@@ -1,3 +1,3 @@
 script_key = prada["Key"];
 
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/f97a5a9768e6c08794511cc03723ec5f.lua"))()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/133268fce8196334893fd78fbe1adb54.lua"))()
