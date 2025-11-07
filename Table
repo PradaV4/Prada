@@ -1,7 +1,7 @@
 -- // discord.gg/pradacc
 
 getgenv().prada = {
-    ["Key"] = "",
+    ["Key"] = "oEoKCuZYqVKgpZOqHjtBhOsZAsRcInEm",
     ["Target"] = {
         ["Type"] = "Automatic", -- Target, Automatic
         ["Key"] = Enum.KeyCode.C,
@@ -15,7 +15,7 @@ getgenv().prada = {
             ["Enabled"] = true,
             ["Nearest Point"] = {
                 ["Enabled"] = true,
-                ["Scale"] = 4.5
+                ["Scale"] = 3
             },
             ["Whitelisted"] = {
                 ["[Double-Barrel SG]"] = true,
@@ -24,7 +24,7 @@ getgenv().prada = {
             }
         },
         ["Camlock"] = {
-            ["Enabled"] = true,
+            ["Enabled"] = false,
             ["Smoothness"] = 0.065,
             ["Key"] = Enum.KeyCode.V,
             ["Type"] = "Hold", -- Hold, Toggle
@@ -37,8 +37,8 @@ getgenv().prada = {
         ["Triggerbot"] = {
             ["Enabled"] = true,
             ["Key"] = Enum.KeyCode.V,
-            ["Delay"] = 0.08,
-            ["Type"] = "Toggle", -- Hold, Toggle
+            ["Delay"] = 0,
+            ["Type"] = "Hold", -- Hold, Toggle
             ["Whitelisted"] = {
                 ["[Double-Barrel SG]"] = true,
                 ["[Revolver]"] = true,
@@ -65,7 +65,7 @@ getgenv().prada = {
             },
             ["Triggerbot"] = {
                 ["Visualize"] = false,
-                ["Width"] = 0.5, -- multiplier
+                ["Width"] = 0.7, -- multiplier
                 ["Height"] = 1
             }
         },
@@ -99,9 +99,9 @@ getgenv().prada = {
             ["Bullet Modification"] = {
                 ["Enabled"] = true,
                 ["Width"] = 1,
-                ["Height"] = 2,
+                ["Height"] = 1,
                 ["Force Hit"] = {
-                    ["Enabled"] = false
+                    ["Enabled"] = true
                 }
             },
             ["Client Redirection"] = {
