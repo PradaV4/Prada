@@ -1,10 +1,8 @@
 -- // discord.gg/pradacc
 
-script_key = "Ur key goes here"
-
 getgenv().Prada = {
     method = {
-        Method = "Automatic", -- Options: "Target" or "Automatic"
+        Method = "Target", -- Options: "Target" or "Automatic"
         Keybind = Enum.KeyCode.C
     },
 
@@ -22,9 +20,11 @@ getgenv().Prada = {
     },
 
     camlock = {
-        enabled = false,
+        enabled = true,  -- Enable camlock
         part = "Head",
-        nearestpoint = false,
+        nearest_point = {  
+            enabled = false
+        },
         key = Enum.KeyCode.V,
         type = "hold",
         box = {
@@ -117,7 +117,7 @@ getgenv().Prada = {
     },
 
     movement_modification = {
-        enabled = false,
+        enabled = true,
         speed = {
             multiplier = 5
         },
@@ -130,9 +130,7 @@ getgenv().Prada = {
     },
 
     -- // Displays the field-of-view box for silent aim, camlock, and triggerbot.
-    visualize_box = false
+    visualize_box = true
 }
-
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/133268fce8196334893fd78fbe1adb54.lua"))()
 
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/133268fce8196334893fd78fbe1adb54.lua"))()
