@@ -1,7 +1,7 @@
 -- // discord.gg/pradacc
 
 getgenv().prada = {
-    ["Key"] = "oEoKCuZYqVKgpZOqHjtBhOsZAsRcInEm",
+    ["Key"] = "",
     ["Target"] = {
         ["Type"] = "Automatic", -- Target, Automatic
         ["Key"] = Enum.KeyCode.C,
