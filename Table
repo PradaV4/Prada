@@ -70,12 +70,13 @@ getgenv().prada = {
             }
         },
         ["ESP"] = {
-            ["Enabled"] = false,
+            ["Enabled"] = true,
             ["Key"] = Enum.KeyCode.Z,
             ["Name"] = {
-                ["Enabled"] = false,
+                ["Enabled"] = true,
                 ["Size"] = 13,
-                ["Color"] = Color3.fromRGB(255, 0, 0)
+                ["Color"] = Color3.fromRGB(255, 0, 0),
+                ["Font"] = 2
             }
         }
     },
