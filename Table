@@ -15,7 +15,7 @@ getgenv().prada = {
             ["Enabled"] = true,
             ["Nearest Point"] = {
                 ["Enabled"] = true,
-                ["Scale"] = 3
+                ["Scale"] = 4.5
             },
             ["Whitelisted"] = {
                 ["[Double-Barrel SG]"] = true,
@@ -24,7 +24,7 @@ getgenv().prada = {
             }
         },
         ["Camlock"] = {
-            ["Enabled"] = false,
+            ["Enabled"] = true,
             ["Smoothness"] = 0.065,
             ["Key"] = Enum.KeyCode.V,
             ["Type"] = "Hold", -- Hold, Toggle
@@ -37,12 +37,20 @@ getgenv().prada = {
         ["Triggerbot"] = {
             ["Enabled"] = true,
             ["Key"] = Enum.KeyCode.V,
-            ["Delay"] = 0,
+            ["Delay"] = 0, -- Global delay
             ["Type"] = "Hold", -- Hold, Toggle
             ["Whitelisted"] = {
-                ["[Double-Barrel SG]"] = true,
-                ["[Revolver]"] = true,
-                ["[TacticalShotgun]"] = true
+                ["Weapons"] = {
+                    ["[Double-Barrel SG]"] = true,
+                    ["[Revolver]"] = true,
+                    ["[TacticalShotgun]"] = true
+                },
+                ["Delays"] = {
+                    ["Enabled"] = false,
+                    ["[Double-Barrel SG]"] = 0,
+                    ["[Revolver]"] = 0,
+                    ["[TacticalShotgun]"] = 0
+                }
             }
         },
         ["Checks"] = {
@@ -65,7 +73,7 @@ getgenv().prada = {
             },
             ["Triggerbot"] = {
                 ["Visualize"] = false,
-                ["Width"] = 0.7, -- multiplier
+                ["Width"] = 0.5, -- multiplier
                 ["Height"] = 1
             }
         },
@@ -100,9 +108,9 @@ getgenv().prada = {
             ["Bullet Modification"] = {
                 ["Enabled"] = true,
                 ["Width"] = 1,
-                ["Height"] = 1,
+                ["Height"] = 2,
                 ["Force Hit"] = {
-                    ["Enabled"] = true
+                    ["Enabled"] = false
                 }
             },
             ["Client Redirection"] = {
