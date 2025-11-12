@@ -15,7 +15,7 @@ getgenv().prada = {
             ["Enabled"] = true,
             ["Nearest Point"] = {
                 ["Enabled"] = true,
-                ["Scale"] = 4.5
+                ["Scale"] = 3
             },
             ["Whitelisted"] = {
                 ["[Double-Barrel SG]"] = true,
@@ -24,7 +24,7 @@ getgenv().prada = {
             }
         },
         ["Camlock"] = {
-            ["Enabled"] = true,
+            ["Enabled"] = false,
             ["Smoothness"] = 0.065,
             ["Key"] = Enum.KeyCode.V,
             ["Type"] = "Hold", -- Hold, Toggle
@@ -37,16 +37,11 @@ getgenv().prada = {
         ["Triggerbot"] = {
             ["Enabled"] = true,
             ["Key"] = Enum.KeyCode.V,
-            ["Delay"] = 0, -- Global delay
             ["Type"] = "Hold", -- Hold, Toggle
-            ["Whitelisted"] = {
-                ["Weapons"] = {
-                    ["[Double-Barrel SG]"] = true,
-                    ["[Revolver]"] = true,
-                    ["[TacticalShotgun]"] = true
-                },
-                ["Delays"] = {
-                    ["Enabled"] = false,
+            ["Delay"] = 0,
+            ["Delays"] = {
+                ["Enabled"] = false,
+                ["Guns"] = {
                     ["[Double-Barrel SG]"] = 0,
                     ["[Revolver]"] = 0,
                     ["[TacticalShotgun]"] = 0
@@ -110,7 +105,7 @@ getgenv().prada = {
                 ["Width"] = 1,
                 ["Height"] = 2,
                 ["Force Hit"] = {
-                    ["Enabled"] = false
+                    ["Enabled"] = true
                 }
             },
             ["Client Redirection"] = {
