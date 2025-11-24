@@ -15,7 +15,7 @@ getgenv().prada = {
             ["Enabled"] = true,
             ["Nearest Point"] = {
                 ["Enabled"] = true,
-                ["Scale"] = 3
+                ["Scale"] = 4.5
             },
             ["Whitelisted"] = {
                 ["[Double-Barrel SG]"] = true,
@@ -24,7 +24,7 @@ getgenv().prada = {
             }
         },
         ["Camlock"] = {
-            ["Enabled"] = false,
+            ["Enabled"] = true,
             ["Smoothness"] = 0.065,
             ["Key"] = Enum.KeyCode.V,
             ["Type"] = "Hold", -- Hold, Toggle
@@ -68,7 +68,7 @@ getgenv().prada = {
             },
             ["Triggerbot"] = {
                 ["Visualize"] = false,
-                ["Width"] = 0.5, -- multiplier
+                ["Width"] = 0.7, -- multiplier
                 ["Height"] = 1
             }
         },
@@ -86,10 +86,10 @@ getgenv().prada = {
     ["Tool"] = {
         ["Mods"] = {
             ["Delay"] = {
-                ["Enabled"] = true,
+                ["Enabled"] = false,
                 ["Guns"] = {
                     ["[Double-Barrel SG]"] = 85,
-                    ["[Revolver]"] = 85,
+                    ["[Revolver]"] = 65,
                     ["[TacticalShotgun]"] = 97
                 }
             },
@@ -102,10 +102,14 @@ getgenv().prada = {
             },
             ["Bullet Modification"] = {
                 ["Enabled"] = true,
-                ["Width"] = 1,
-                ["Height"] = 2,
+                ["Width"] = 0.08,
+                ["Height"] = 0.08,
                 ["Force Hit"] = {
-                    ["Enabled"] = true
+                    ["Enabled"] = true,
+                    ["Randomizer"] = {
+                        ["Enabled"] = true,
+                        ["Hit Chance"] = 50
+                    }
                 }
             },
             ["Client Redirection"] = {
@@ -120,8 +124,8 @@ getgenv().prada = {
             ["Guns"] = {
                 ["[Double-Barrel SG]"] = "Galaxy",
                 ["[Revolver]"] = "Galaxy",
-                ["[TacticalShotgun]"] = "Electric",
-                ["[Knife]"] = "Love Kukri"
+                ["[TacticalShotgun]"] = "Galaxy",
+                ["[Knife]"] = "GPO-Knife Prestige"
             }
         }
     },
@@ -129,7 +133,7 @@ getgenv().prada = {
         ["Speed"] = {
             ["Enabled"] = false,
             ["Key"] = Enum.KeyCode.T,
-            ["Multiplier"] = 3
+            ["Multiplier"] = 15
         }
     }
 }
