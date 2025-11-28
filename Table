@@ -1,139 +1,164 @@
 -- // discord.gg/pradacc
 
 getgenv().prada = {
-    ["Key"] = "",
+    ["Keybinds"] = {
+        ["Target"] = "C",
+        ["Combat"] = {
+            ["Silent"] = "V",
+            ["Camlock"] = "Z",
+            ["Triggerbot"] = "V"
+        },
+        ["Visuals"] = {
+            ["ESP"] = "T",
+            ["Speed"] = "Z"
+        }
+    },
+    
     ["Target"] = {
-        ["Type"] = "Automatic", -- Target, Automatic
-        ["Key"] = Enum.KeyCode.C,
-        ["Unlock"] = {
+        ["Type"] = "Automatic", -- Automatic, Target.
+        ["Color"] = Color3.fromRGB(0, 255, 0), -- esp will be {color} to indicate who you're locked onto
+        ["Unlock"] = { -- only for target
             ["Knocked"] = true,
             ["Grabbed"] = true
         }
     },
+
+    ["Checks"] = {
+        ["Combat"] = {
+            ["Knocked"] = true,
+            ["Grabbed"] = true
+        }
+    },
+
+    ["Whitelisted"] = {
+        ["Combat"] = {
+            ["Silent"] = {"[Double-Barrel SG]", "[Revolver]", "[TacticalShotgun]"},
+            ["Camlock"] = {"[Double-Barrel SG]", "[Revolver]", "[TacticalShotgun]"},
+            ["Triggerbot"] = {"[Double-Barrel SG]", "[Revolver]", "[TacticalShotgun]"},
+            ["Hit Scan"] = {"[Revolver]"}
+        },
+        ["Gun"] = {
+            ["Bullet Modification"] = {"[Double-Barrel SG]", "[Revolver]", "[TacticalShotgun]"},
+            ["Damage Overrider"] = {"[Double-Barrel SG]", "[Revolver]", "[TacticalShotgun]"},
+            ["Bullet Redirection"] = {"[Double-Barrel SG]", "[Revolver]", "[TacticalShotgun]"}
+        }
+    },
+
     ["Combat"] = {
         ["Silent"] = {
             ["Enabled"] = true,
             ["Nearest Point"] = {
                 ["Enabled"] = true,
-                ["Scale"] = 4.5
+                ["Scale"] = 2
             },
-            ["Whitelisted"] = {
-                ["[Double-Barrel SG]"] = true,
-                ["[Revolver]"] = true,
-                ["[TacticalShotgun]"] = true
-            }
-        },
-        ["Camlock"] = {
-            ["Enabled"] = true,
-            ["Smoothness"] = 0.065,
-            ["Key"] = Enum.KeyCode.V,
-            ["Type"] = "Hold", -- Hold, Toggle
-            ["Whitelisted"] = {
-                ["[Double-Barrel SG]"] = true,
-                ["[Revolver]"] = true,
-                ["[TacticalShotgun]"] = true
-            }
+            ["Distance Check"] = false,
+            ["Hit Chance"] = 100
         },
         ["Triggerbot"] = {
             ["Enabled"] = true,
-            ["Key"] = Enum.KeyCode.V,
-            ["Type"] = "Hold", -- Hold, Toggle
-            ["Delay"] = 0,
-            ["Delays"] = {
-                ["Enabled"] = false,
-                ["Guns"] = {
-                    ["[Double-Barrel SG]"] = 0,
-                    ["[Revolver]"] = 0,
-                    ["[TacticalShotgun]"] = 0
-                }
-            }
+            ["Type"] = "Toggle", -- Hold, Toggle
+            ["Delay"] = 0.2
         },
-        ["Checks"] = {
-            ["Knocked"] = true,
-            ["ForceField"] = true,
-            ["Grabbed"] = true
+        ["Camlock"] = {
+            ["Enabled"] = true,
+            ["Smoothing"] = 0.067,
+            ["Style"] = "Linear",
+            ["Type"] = "Toggle", -- Hold, Toggle
+            ["Direction"] = "In"
+        },
+        ["Rage"] = {
+            ["Hit Scan"] = {
+                ["Enabled"] = false,
+                ["Width"] = 3,
+                ["Height"] = 1
+            }
         }
     },
+
+    ["FOV"] = {
+        ["Box"] = "Advanced", -- Advanced, Simple.
+        ["Silent"] = {
+            ["Width"] = 1, -- multiplier
+            ["Height"] = 1
+        },
+        ["Camlock"] = {
+            ["Width"] = 1, -- multiplier
+            ["Height"] = 1
+        },
+        ["Triggerbot"] = {
+            ["Width"] = 1, -- multiplier
+            ["Height"] = 1
+        }
+    },
+
+    ["Gun"] = {
+        ["Bullet Modification"] = {
+            ["Enabled"] = true,
+            ["Width"] = 0.5,
+            ["Height"] = 0.5,
+        },
+        ["Damage Overrider"] = {
+            ["Enabled"] = true,
+            ["Type"] = "Full", -- Min, Half, Full
+            ["Chance"] = 67
+        },
+        ["Delay"] = {
+            ["Enabled"] = true,
+            ["Guns"] = {
+                ["[Double-Barrel SG]"] = 95,
+                ["[Revolver]"] = 95,
+                ["[TacticalShotgun]"] = 95
+            }
+        },
+        ["Spread"] = {
+            ["Enabled"] = true,
+            ["Guns"] = {
+                ["[Double-Barrel SG]"] = 80,
+                ["[TacticalShotgun]"] = 80
+            }
+        },
+        ["Bullet Redirection"] = {
+            ["Enabled"] = true
+        },
+        ["Skin Changer"] = {
+            ["Enabled"] = true,
+            ["Skins"] = {
+                ["[Double-Barrel SG]"] = "Galaxy",
+                ["[Revolver]"] = "Galaxy",
+                ["[TacticalShotgun]"] = "Galaxy",
+                ["[Knife]"] = "Golden Age Tanto"
+            }
+        }
+    },
+
     ["Visuals"] = {
-        ["Box"] = {
-            ["Silent"] = {
-                ["Visualize"] = false,
-                ["Width"] = 0.7, -- multiplier
-                ["Height"] = 1
-            },
-            ["Camlock"] = {
-                ["Visualize"] = false,
-                ["Width"] = 0.7, -- multiplier
-                ["Height"] = 1
-            },
-            ["Triggerbot"] = {
-                ["Visualize"] = false,
-                ["Width"] = 0.7, -- multiplier
-                ["Height"] = 1
+        ["Info"] = { -- Will draw text on your screen not for closeting
+            ["Enabled"] = true,
+            ["Texts"] = {
+                ["Silent Aim"] = false,
+                ["Triggerbot"] = false
             }
         },
         ["ESP"] = {
             ["Enabled"] = true,
-            ["Key"] = Enum.KeyCode.Z,
-            ["Name"] = {
-                ["Enabled"] = true,
-                ["Size"] = 13,
-                ["Color"] = Color3.fromRGB(255, 0, 0),
-                ["Font"] = 2
-            }
+            ["Name"] = "Name", -- Name, DisplayName
+            ["Distance"] = 500, -- Max Distance
+            ["Color"] = Color3.fromRGB(255, 255, 255), -- For custom colors: tuneform.com/tools/color/rgb-color-creator
+            ["TargetColor"] = Color3.fromRGB(255, 0, 0), -- esp will be {color} to indicate who you're locked onto
+            ["Size"] = 8
         }
     },
-    ["Tool"] = {
-        ["Mods"] = {
-            ["Delay"] = {
-                ["Enabled"] = false,
-                ["Guns"] = {
-                    ["[Double-Barrel SG]"] = 85,
-                    ["[Revolver]"] = 65,
-                    ["[TacticalShotgun]"] = 97
-                }
-            },
-            ["Spread"] = {
-                ["Enabled"] = true,
-                ["Guns"] = {
-                    ["[Double-Barrel SG]"] = 80,
-                    ["[TacticalShotgun]"] = 80
-                }
-            },
-            ["Bullet Modification"] = {
-                ["Enabled"] = true,
-                ["Width"] = 0.08,
-                ["Height"] = 0.08,
-                ["Force Hit"] = {
-                    ["Enabled"] = true,
-                    ["Randomizer"] = {
-                        ["Enabled"] = true,
-                        ["Hit Chance"] = 50
-                    }
-                }
-            },
-            ["Client Redirection"] = {
-                ["Enabled"] = true,
-                ["Whitelisted"] = {
-                    ["[Revolver]"] = true
-                }
-            }
-        },
-        ["SkinChanger"] = {
-            ["Enabled"] = true,
-            ["Guns"] = {
-                ["[Double-Barrel SG]"] = "Galaxy",
-                ["[Revolver]"] = "Galaxy",
-                ["[TacticalShotgun]"] = "Galaxy",
-                ["[Knife]"] = "GPO-Knife Prestige"
-            }
-        }
-    },
+
     ["Character"] = {
-        ["Speed"] = {
-            ["Enabled"] = false,
-            ["Key"] = Enum.KeyCode.T,
-            ["Multiplier"] = 15
+        ["Speed Override"] = {
+            ["Enabled"] = true,
+            ["Data"] = { -- Multiplier
+                ["Shooting"] = 1.2,
+                ["Low health"] = 1.1,
+                ["Knife"] = 1.3,
+                ["Reloading"] = 1.5,
+                ["Normal"] = 1,
+            }
         }
     }
 }
