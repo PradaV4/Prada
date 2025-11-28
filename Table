@@ -6,7 +6,6 @@ getgenv().prada = {
     ["Keybinds"] = {
         ["Target"] = "C",
         ["Combat"] = {
-            ["Silent"] = "V",
             ["Camlock"] = "Z",
             ["Triggerbot"] = "V"
         },
