@@ -1,6 +1,8 @@
 -- // discord.gg/pradacc
 
 getgenv().prada = {
+    ["Key"] = "",
+
     ["Keybinds"] = {
         ["Target"] = "C",
         ["Combat"] = {
