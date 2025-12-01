@@ -1,6 +1,8 @@
 -- // discord.gg/pradacc
 
 getgenv().prada = {
+    ['Key'] = "",
+    
     ["Keybinds"] = {
         ["Target"] = "C",
         ["Combat"] = {
@@ -14,7 +16,6 @@ getgenv().prada = {
             ["Speed"] = "B"
         }
     },
-    
     ["Target"] = {
         ["Type"] = "Target", -- Automatic, Target.
         ["Color"] = Color3.fromRGB(0, 255, 0), -- esp will be {color} to indicate who you're locked onto
@@ -51,7 +52,7 @@ getgenv().prada = {
             ["Enabled"] = true,
             ["Nearest Point"] = {
                 ["Enabled"] = true,
-                ["Scale"] = 2
+                ["Scale"] = 2.6
             },
             ["Distance Check"] = true,
             ["Hit Chance"] = 100
@@ -63,15 +64,15 @@ getgenv().prada = {
         },
         ["Camlock"] = {
             ["Enabled"] = true,
-            ["Smoothing"] = 0.067,
+            ["Smoothing"] = 1,
             ["Style"] = "Linear",
             ["Type"] = "Hold", -- Hold, Toggle
-            ["Direction"] = "In"
+            ["Direction"] = "In" -- We offer a wide range of easing styles for smooth animations. For reference, check out: https://create.roblox.com/docs/reference/engine/enums/EasingStyle.
         },
         ["Rage"] = {
             ["Hit Scan"] = {
                 ["Enabled"] = false,
-                ["Width"] = 3,
+                ["Width"] = 1,
                 ["Height"] = 1
             }
         }
@@ -134,7 +135,7 @@ getgenv().prada = {
     },
 
     ["Visuals"] = {
-        ["Info"] = { -- Will draw text on your screen not for closeting
+        ["Info"] = { -- Will draw text on your screen not for closeting 
             ["Enabled"] = false,
             ["Texts"] = {
                 ["Silent Aim"] = false,
