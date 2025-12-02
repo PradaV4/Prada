@@ -1,8 +1,6 @@
--- // discord.gg/pradacc
-
 getgenv().prada = {
-    ['Key'] = "",
-    
+    ["Key"] = "",
+
     ["Keybinds"] = {
         ["Target"] = "C",
         ["Combat"] = {
@@ -16,10 +14,11 @@ getgenv().prada = {
             ["Speed"] = "B"
         }
     },
+    
     ["Target"] = {
         ["Type"] = "Target", -- Automatic, Target.
         ["Color"] = Color3.fromRGB(0, 255, 0), -- esp will be {color} to indicate who you're locked onto
-        ["Visible Check"] = true, -- If you want to lock on through walls or not
+        ["Visible Check"] = false, -- If you want to lock on through walls or not
         ["Unlock"] = { -- only for target
             ["Knocked"] = true,
             ["Grabbed"] = true
@@ -52,27 +51,25 @@ getgenv().prada = {
             ["Enabled"] = true,
             ["Nearest Point"] = {
                 ["Enabled"] = true,
-                ["Scale"] = 2.6
+                ["Scale"] = 2
             },
-            ["Distance Check"] = true,
-            ["Hit Chance"] = 100
         },
         ["Triggerbot"] = {
             ["Enabled"] = true,
             ["Type"] = "Hold", -- Hold, Toggle
-            ["Delay"] = 0
+            ["Delay"] = 0.2
         },
         ["Camlock"] = {
             ["Enabled"] = true,
-            ["Smoothing"] = 1,
+            ["Smoothing"] = 0.067,
             ["Style"] = "Linear",
-            ["Type"] = "Hold", -- Hold, Toggle
-            ["Direction"] = "In" -- We offer a wide range of easing styles for smooth animations. For reference, check out: https://create.roblox.com/docs/reference/engine/enums/EasingStyle.
+            ["Type"] = "Toggle", -- Hold, Toggle
+            ["Direction"] = "In"
         },
         ["Rage"] = {
             ["Hit Scan"] = {
                 ["Enabled"] = false,
-                ["Width"] = 1,
+                ["Width"] = 3,
                 ["Height"] = 1
             }
         }
@@ -97,13 +94,13 @@ getgenv().prada = {
     ["Gun"] = {
         ["Bullet Modification"] = {
             ["Enabled"] = true,
-            ["Width"] = 1,
-            ["Height"] = 1,
+            ["Width"] = 0.5,
+            ["Height"] = 0.5,
         },
         ["Damage Overrider"] = {
             ["Enabled"] = true,
             ["Type"] = "Full", -- Min, Half, Full
-            ["Chance"] = 100
+            ["Chance"] = 67
         },
         ["Delay"] = {
             ["Enabled"] = true,
@@ -127,7 +124,7 @@ getgenv().prada = {
             ["Enabled"] = true,
             ["Skins"] = {
                 ["[Double-Barrel SG]"] = "Galaxy",
-                ["[Revolver]"] = "Golden Age",
+                ["[Revolver]"] = "Galaxy",
                 ["[TacticalShotgun]"] = "Galaxy",
                 ["[Knife]"] = "Golden Age Tanto"
             }
@@ -135,8 +132,8 @@ getgenv().prada = {
     },
 
     ["Visuals"] = {
-        ["Info"] = { -- Will draw text on your screen not for closeting 
-            ["Enabled"] = false,
+        ["Info"] = { -- Will draw text on your screen not for closeting
+            ["Enabled"] = true,
             ["Texts"] = {
                 ["Silent Aim"] = false,
                 ["Triggerbot"] = false
@@ -156,11 +153,11 @@ getgenv().prada = {
         ["Speed Override"] = {
             ["Enabled"] = true,
             ["Data"] = { -- Multiplier
-                ["Shooting"] = 1,
-                ["Low health"] = 1,
-                ["Knife"] = 1,
-                ["Reloading"] = 1,
-                ["Normal"] = 1,
+                ["Shooting"] = 25,
+                ["Low health"] = 25,
+                ["Knife"] = 25,
+                ["Reloading"] = 25,
+                ["Normal"] = 25,
             }
         },
         ["Anti Trip"] = {
