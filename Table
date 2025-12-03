@@ -1,12 +1,10 @@
 -- // discord.gg/pradacc
 
 getgenv().prada = {
-    ["Key"] = "",
-
     ["Keybinds"] = {
         ["Target"] = "C",
         ["Combat"] = {
-            ["Camlock"] = "Z",
+            ["Camlock"] = "V",
             ["Triggerbot"] = "V"
         },
         ["Visuals"] = {
@@ -18,9 +16,9 @@ getgenv().prada = {
     },
     
     ["Target"] = {
-        ["Type"] = "Target", -- Automatic, Target.
+        ["Type"] = "Automatic", -- Automatic, Target.
         ["Color"] = Color3.fromRGB(0, 255, 0), -- esp will be {color} to indicate who you're locked onto
-        ["Visible Check"] = false, -- If you want to lock on through walls or not
+        ["Visible Check"] = true, -- If you want to lock on through walls or not
         ["Unlock"] = { -- only for target
             ["Knocked"] = true,
             ["Grabbed"] = true
@@ -53,22 +51,23 @@ getgenv().prada = {
             ["Enabled"] = true,
             ["Nearest Point"] = {
                 ["Enabled"] = true,
-                ["Scale"] = 2
+                ["Scale"] = 3
             },
+            ["Hit Chance"] = 100
         },
         ["Triggerbot"] = {
             ["Enabled"] = true,
             ["Type"] = "Hold", -- Hold, Toggle
-            ["Delay"] = 0.2
+            ["Delay"] = 0.01
         },
         ["Camlock"] = {
-            ["Enabled"] = true,
+            ["Enabled"] = false,
             ["Smoothing"] = 0.067,
             ["Style"] = "Linear",
             ["Type"] = "Toggle", -- Hold, Toggle
             ["Direction"] = "In"
         },
-        ["Rage"] = {
+        ["Rage"] = { -- // In Dev
             ["Hit Scan"] = {
                 ["Enabled"] = false,
                 ["Width"] = 3,
@@ -78,52 +77,63 @@ getgenv().prada = {
     },
 
     ["FOV"] = {
-        ["Box"] = "Advanced", -- Advanced, Simple.
         ["Silent"] = {
             ["Width"] = 1, -- multiplier
-            ["Height"] = 1
+            ["Height"] = 1,
+            ["Visualize"] = {
+                ["Enabled"] = false,
+                ["Color"] = Color3.fromRGB(255, 0, 234) -- For custom colors: tuneform.com/tools/color/rgb-color-creator
+            }
         },
         ["Camlock"] = {
             ["Width"] = 1, -- multiplier
-            ["Height"] = 1
+            ["Height"] = 1,
+            ["Visualize"] = {
+                ["Enabled"] = false,
+                ["Color"] = Color3.fromRGB(255, 0, 221) -- For custom colors: tuneform.com/tools/color/rgb-color-creator
+            }
         },
         ["Triggerbot"] = {
             ["Width"] = 1, -- multiplier
-            ["Height"] = 1
+            ["Height"] = 1,
+            ["Visualize"] = {
+                ["Enabled"] = false,
+                ["Color"] = Color3.fromRGB(255, 0, 221) -- For custom colors: tuneform.com/tools/color/rgb-color-creator
+            }
         }
     },
 
     ["Gun"] = {
         ["Bullet Modification"] = {
-            ["Enabled"] = true,
-            ["Width"] = 0.5,
-            ["Height"] = 0.5,
+            ["Enabled"] = false,
+            ["Width"] = 0,
+            ["Height"] = 0,
         },
         ["Damage Overrider"] = {
-            ["Enabled"] = true,
+            ["Enabled"] = false,
             ["Type"] = "Full", -- Min, Half, Full
-            ["Chance"] = 67
+            ["Chance"] = 100
         },
         ["Delay"] = {
-            ["Enabled"] = true,
+            ["Enabled"] = false,
             ["Guns"] = {
-                ["[Double-Barrel SG]"] = 95,
-                ["[Revolver]"] = 95,
-                ["[TacticalShotgun]"] = 95
+                ["[Double-Barrel SG]"] = 100,
+                ["[Revolver]"] = 100,
+                ["[TacticalShotgun]"] = 100
             }
         },
         ["Spread"] = {
-            ["Enabled"] = true,
+            ["Enabled"] = false,
             ["Guns"] = {
-                ["[Double-Barrel SG]"] = 80,
-                ["[TacticalShotgun]"] = 80
+                ["[Double-Barrel SG]"] = 100,
+                ["[TacticalShotgun]"] = 100
             }
         },
         ["Bullet Redirection"] = {
             ["Enabled"] = false
         },
         ["Skin Changer"] = {
-            ["Enabled"] = true,
+            ["Enabled"] = false,
             ["Skins"] = {
                 ["[Double-Barrel SG]"] = "Galaxy",
                 ["[Revolver]"] = "Galaxy",
@@ -135,14 +145,14 @@ getgenv().prada = {
 
     ["Visuals"] = {
         ["Info"] = { -- Will draw text on your screen not for closeting
-            ["Enabled"] = true,
+            ["Enabled"] = false,
             ["Texts"] = {
                 ["Silent Aim"] = false,
                 ["Triggerbot"] = false
             }
         },
         ["ESP"] = {
-            ["Enabled"] = true,
+            ["Enabled"] = false,
             ["Name"] = "Name", -- Name, DisplayName
             ["Distance"] = 500, -- Max Distance
             ["Color"] = Color3.fromRGB(255, 255, 255), -- For custom colors: tuneform.com/tools/color/rgb-color-creator
@@ -153,17 +163,17 @@ getgenv().prada = {
 
     ["Character"] = {
         ["Speed Override"] = {
-            ["Enabled"] = true,
+            ["Enabled"] = false,
             ["Data"] = { -- Multiplier
-                ["Shooting"] = 25,
-                ["Low health"] = 25,
-                ["Knife"] = 25,
-                ["Reloading"] = 25,
-                ["Normal"] = 25,
+                ["Shooting"] = 1,
+                ["Low health"] = 1,
+                ["Knife"] = 1,
+                ["Reloading"] = 1,
+                ["Normal"] = 1,
             }
         },
         ["Anti Trip"] = {
-            ["Enabled"] = true
+            ["Enabled"] = false
         }
     }
 }
